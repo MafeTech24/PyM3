@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import ItemCount from './ItemCount';
 
 function ItemDetailContainer() {
   const { id } = useParams();
@@ -27,10 +28,11 @@ function ItemDetailContainer() {
           <p>{producto.description}</p>
           <h4 className="text-success">${producto.price}</h4>
           <p><strong>Categoría:</strong> {producto.category}</p>
-        </div>
+          <ItemCount item = {producto} />
+        </div>        
       </div>
     </div>
-  );
+  );  
 }
 
 export default ItemDetailContainer;
