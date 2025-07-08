@@ -10,12 +10,12 @@ import logo from '../assets/logo.webp';
 function NavBar() {
   const [categorias, setCategorias] = useState([]);
 
-  useEffect(() => {
+  /*useEffect(() => {
     fetch('https://fakestoreapi.com/products/categories')
       .then((res) => res.json())
       .then((cat) => setCategorias(cat))
       .catch((err) => console.error('Error al obtener categorías:', err));
-  }, []);
+  }, []);*/
 
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
@@ -27,17 +27,12 @@ function NavBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <NavDropdown title="Categorías" id="basic-nav-dropdown">
-              {categorias.map((categoria) => (
-                <NavDropdown.Item
-                  key={categoria}
-                  to={`/categories/${categoria}`}
-                  as={NavLink}
-                >
-                  {categoria}
-                </NavDropdown.Item>
-              ))}
-            </NavDropdown>
+            <NavDropdown title="Categorías" id="basic-nav-dropdown">              
+              <NavDropdown.Item to={`/category/electronics`} as={NavLink}>Electrónica</NavDropdown.Item> 
+              <NavDropdown.Item to={`/category/jewelery`} as={NavLink}>Joyería</NavDropdown.Item>  
+              <NavDropdown.Item to={`/category/mens-clothing`} as={NavLink}>Ropa de Hombre</NavDropdown.Item>
+              <NavDropdown.Item to={`/category/womens-clothing`} as={NavLink}>Ropa de Mujer</NavDropdown.Item>
+            </NavDropdown>            
           </Nav>
         </Navbar.Collapse>
         <CartWidget />

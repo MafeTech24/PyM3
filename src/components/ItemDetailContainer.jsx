@@ -6,7 +6,7 @@ function ItemDetailContainer() {
   const { id } = useParams();
   const [producto, setProducto] = useState();
 
-  useEffect(() => {
+ /* useEffect(() => {
     fetch(`https://fakestoreapi.com/products/${id}`)
       .then(res => res.json())
       .then(data => setProducto(data))
@@ -15,7 +15,7 @@ function ItemDetailContainer() {
 
    if (!producto) {
     return <p className="text-center mt-5">Cargando producto...</p>;
-  }
+  }*/
 
   return (
     <div className="container mt-4">
