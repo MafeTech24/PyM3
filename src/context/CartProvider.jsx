@@ -22,8 +22,8 @@ function CartProvider({ children }) {
         const totalQuantity = cart.map(prod => prod.count)
         const quantity = totalQuantity.reduce((acc, current) => acc + current, 0,)
         return quantity
-    }
-
+    }       
+    
     const updateQuantity = (id, newCount) => {
         if (newCount <= 0) {
           setCart(cart.filter(item => item.id !== id));
