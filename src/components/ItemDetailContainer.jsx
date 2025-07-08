@@ -1,21 +1,20 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import { getProduct } from '../firebase/db';
 import ItemCount from './ItemCount';
 
 function ItemDetailContainer() {
   const { id } = useParams();
-  const [producto, setProducto] = useState();
+  const [producto, setProducts] = useState();
 
- /* useEffect(() => {
-    fetch(`https://fakestoreapi.com/products/${id}`)
-      .then(res => res.json())
-      .then(data => setProducto(data))
-      .catch(err => console.error('Error al cargar producto:', err));
+  useEffect(() => {
+    getProduct(id)
+      .then(producto => setProducts(producto))      
   }, [id]);
 
    if (!producto) {
     return <p className="text-center mt-5">Cargando producto...</p>;
-  }*/
+  }
 
   return (
     <div className="container mt-4">
