@@ -10,13 +10,6 @@ import logo from '../assets/logo.webp';
 function NavBar() {
   const [categorias, setCategorias] = useState([]);
 
-  /*useEffect(() => {
-    fetch('https://fakestoreapi.com/products/categories')
-      .then((res) => res.json())
-      .then((cat) => setCategorias(cat))
-      .catch((err) => console.error('Error al obtener categorías:', err));
-  }, []);*/
-
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
@@ -47,56 +40,3 @@ export default NavBar;
 
 
 
-
-
-
-
-/*import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import CartWidget from './CartWidget';
-import { useEffect, useState } from 'react';
-import { NavLink } from 'react-router'; 
-import logo from '../assets/logo.webp'; 
-
-function NavBar() {
-  const [categorias, setCategorias] = useState([]);
-
-  useEffect(() => {
-    fetch('https://fakestoreapi.com/products/categories')
-      .then((res) => res.json())
-      .then((cat) => setCategorias(cat))
-      .catch((err) => console.error('Error al obtener categorías:', err));
-  }, []);
-
-  return (
-    <Navbar expand="lg" className="bg-body-tertiary">
-      <Container>
-        <Navbar.Brand as={NavLink} to="/" className="d-flex align-items-center">
-          <img src={logo} alt="Logo Pixel & Moda" style={{ height: '50px', width: 'auto', marginRight: '10px' }}/>
-          <span className="fw-bold text-dark">Pixel & Moda</span>
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <NavDropdown title="Categorías" id="basic-nav-dropdown">
-              {categorias.map((categoria) => (
-                <NavDropdown.Item
-                  key={categoria}
-                  to={`/categories/${categoria}`}
-                  as={NavLink}
-                >
-                  {categoria}
-                </NavDropdown.Item>
-              ))}
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
-        <CartWidget />
-      </Container>
-    </Navbar>
-  );
-}
-
-export default NavBar; */

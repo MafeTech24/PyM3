@@ -13,7 +13,7 @@ function CartItem({ item }) {
   
 
   return (
-    <div className="d-flex align-items-center border-bottom mb-3 pb-3">
+    <div className="d-flex align-items-center border-bottom mb-3 pb-3 cart-item">
       <img src={item.image} alt={item.title} style={{ width: "80px", marginRight: "20px" }} />
       <div style={{ flex: 1 }}>
         <h5>{item.title}</h5>
@@ -25,7 +25,7 @@ function CartItem({ item }) {
         <p className="mb-1">Precio: ${item.price}</p>
         <p className="fw-bold">Subtotal: ${item.price * item.count}</p>
       </div>
-      <button className="btn btn-danger" onClick={() => removeFromCart(item.id)}>Eliminar</button>
+      <button className="btn btn-eliminar" onClick={() => removeFromCart(item.id)}>Eliminar</button>
     </div>
   );
 }

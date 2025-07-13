@@ -5,11 +5,12 @@ import {
     query,
     where, 
     doc,
-    getDoc
+    getDoc, 
+    addDoc
 } from "firebase/firestore";
 import { app } from "./config";
 
-const db = getFirestore(app);
+export const db = getFirestore(app);
 
 export const getProducts = async () => {
     const documentos = await getDocs(collection(db, "producto"));
@@ -43,3 +44,9 @@ export const getProduct = async (id) => {
         return null;
     }
 }
+
+
+export const createOrder = async (orden) => {
+  const docRef = await addDoc(collection(db, "orders"), orden);
+  return docRef.id;
+};

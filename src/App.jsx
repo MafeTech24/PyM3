@@ -17,7 +17,7 @@ function App() {
         <Route path="/producto/:id" element={<ItemDetailContainer />} />
         <Route path="/cart" element={<CartContainer />} />
         <Route path="/checkout" element={<CheckoutContainer />} />
-        <Route path="/checkout/success" element={<CheckoutSuccess />} />
+        <Route path="/checkout/success/:orderId" element={<CheckoutSuccess />} />
       </Routes>  
     </ BrowserRouter>
   );

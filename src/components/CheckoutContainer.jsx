@@ -20,7 +20,7 @@ function Checkout() {
   }
 
   return (
-    <div className="container mt-4">
+    <div className="container mt-4 checkout-container">
       <h2 className="mb-4">Resumen de tu compra</h2>
 
       {cart.map((item) => (
